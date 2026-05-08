@@ -2,6 +2,17 @@
 #include <vector>
 using namespace std;
 string solve(vector<int> & data){
+       //method 2: optimal
+    // int sum=0;
+    // for(int i: data){
+    //     sum+=i;
+    // }
+    // if(sum%2==0){
+    //     return "YES";
+    // }
+    // else{
+    //     return "NO";
+    // }
     int even_count=0;
     int odd_count=0;
     for(int i: data){
