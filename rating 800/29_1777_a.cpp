@@ -49,6 +49,16 @@ long long int  solve(vector<long long int> & arr){
     }
     return count;
 }
+long long int solveVid(vector<long long int > & arr){
+    long long int count=0;
+    long long int n=arr.size();
+    for(int i=0;i<n-1;i++){
+        if((arr[i]%2)==(arr[i+1]%2)){
+            count++;
+        }
+    }
+    return count;
+}
 int main(){
     long long int t;
     cin>>t;
@@ -62,7 +72,8 @@ int main(){
             cin>>element;
             arr.push_back(element);
         }
-        answers.push_back(solve(arr));
+        // answers.push_back(solve(arr));// method by me 
+        answers.push_back(solveVid(arr));// methiod by video
     }
     for(int j=0;j<t;j++){
         cout<<answers[j]<<endl;
