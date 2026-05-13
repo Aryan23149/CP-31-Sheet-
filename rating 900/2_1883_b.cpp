@@ -14,6 +14,7 @@ string solve(int n,int k,string s){
         }
     }
     int final_length=n-k;
+    // this is my approach
     if(final_length%2==0){
         if(oddFrequencies<=k){
             return "YES";
@@ -26,6 +27,12 @@ string solve(int n,int k,string s){
         }
         return "NO";
     }
+
+    // // learnt approach
+    // if(oddFrequencies-k<=1){ // in an even final_length string ...there cannot be odd no of odd frequenceies
+    //     return "Yes";
+    // }
+    // return "Count";
 }
 int main(){
     int t;
