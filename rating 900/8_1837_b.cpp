@@ -1,21 +1,26 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <string>
 using namespace std;
 
 int solve(string s){
-    int current=1;
-    int lower_limit=1;
-    int upper_limit=1;
-
-    for(char i: s){
-        if(i=='<') current++;
-        else current--;
-
-        lower_limit=min(current, lower_limit);
-        upper_limit=max(current, upper_limit);
+    int n=s.length();
+    int max_count=1;
+    int count=1;
+    char character=s[0];
+    for(int i=1;i<n;i++){
+        char current_char=s[i];
+        if(current_char==character){
+            count++;
+        }
+        else{
+            character=current_char;
+            count=1;
+        }
+        max_count=max(count,max_count);
     }
-
-    return upper_limit-lower_limit+1;
+    return max_count+1;
 }
 int main(){
     int t;
